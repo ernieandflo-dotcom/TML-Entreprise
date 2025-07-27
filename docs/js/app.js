@@ -6,7 +6,7 @@ import { AuthService } from '../auth/auth.js'; // Updated path to use existing a
 
 // Components
 import { Header } from '../components/header/header.js';
-import { Footer } from '../components/footer/footer.js';
+import { Footer } from '/components/footer/footer.js';
 
 class TextilartApp {
   constructor() {
