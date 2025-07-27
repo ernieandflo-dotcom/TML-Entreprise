@@ -1,0 +1,46 @@
+// _grid.scss
+
+// 1. Container
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 1200px;
+}
+
+// 2. Grid row
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+// 3. Columns
+.col {
+  flex: 1 1 0;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+// 4. Column sizes (12-grid system)
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 percentage($i / 12);
+    max-width: percentage($i / 12);
+  }
+}
+
+// 5. Gutter control
+.no-gutters {
+  margin-left: 0;
+  margin-right: 0;
+
+  > .col,
+  > [class^='col-'] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

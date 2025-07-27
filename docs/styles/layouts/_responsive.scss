@@ -1,0 +1,61 @@
+// _responsive.scss
+
+// 1. Breakpoints
+$breakpoints: (
+  xs: 0,      // phones
+  sm: 576px,  // small tablets
+  md: 768px,  // tablets
+  lg: 992px,  // desktops
+  xl: 1200px  // large desktops
+);
+
+// 2. Mixin for media queries
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "No value found for breakpoint `#{$breakpoint}`.";
+  }
+}
+
+// 3. Responsive visibility classes
+// Usage: .hide-sm, .show-md, etc.
+
+@each $name, $size in $breakpoints {
+  .hide-#{$name} {
+    @include respond-to($name) {
+      display: none !important;
+    }
+  }
+
+  .show-#{$name} {
+    display: none !important;
+
+    @include respond-to($name) {
+      display: block !important;
+    }
+  }
+}
+
+// 4. Example helper: responsive text alignment
+@each $name, $size in $breakpoints {
+  .text-center-#{$name} {
+    @include respond-to($name) {
+      text-align: center;
+    }
+  }
+
+  .text-left-#{$name} {
+    @include respond-to($name) {
+      text-align: left;
+    }
+  }
+
+  .text-right-#{$name} {
+    @include respond-to($name) {
+      text-align: right;
+    }
+  }
+}
