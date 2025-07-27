@@ -1,0 +1,9 @@
+// styles/_base.scss
+@use 'sass:map';
+@use 'variables' as *;
+
+body {
+  font-family: $font-primary;
+  color: $color-text;
+  margin: 0;
+}

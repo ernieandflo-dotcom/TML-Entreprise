@@ -1,0 +1,19 @@
+@use 'sass:map';
+@use 'variables' as *;
+@use 'components/header';
+@use 'components/product-card';
+
+:root {
+  // Directly use variables from the loaded namespace
+  --primary: #{$color-primary};
+  --secondary: #{$color-secondary};
+  --text-light: #{$color-text-light};
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-text;
+  background-color: $color-bg;
+  margin: 0;
+  line-height: map.get($line-heights, 'normal');
+}
