@@ -1,74 +1,66 @@
-// js/app.js - Updated Version
+// js/app.js - Production Ready Version
 
-// Modules
-import { CartManager } from './modules/cart/cartManager.js';
-import { AuthService } from '../auth/auth.js'; // Updated path to use existing auth.js
+// Core Modules
+import { CartManager } from '/js/modules/cart/cartManager.js';
+import { AuthService } from '/auth/auth.js';
 
-// Components
-import { Header } from '../components/header/header.js';
+// Web Components
+import { Header } from '/components/header/header.js';
 import { Footer } from '/components/footer/footer.js';
 
 class TextilartApp {
   constructor() {
     this.cartManager = new CartManager();
     this.authService = new AuthService();
-    this.init();
+    this.init().catch(console.error);
   }
 
   async init() {
+    this.registerComponents();
+    await this.initAuth();
+    this.setupLegacySupport();
+    console.debug('App initialized');
+  }
+
+  registerComponents() {
     try {
-      // Load and register components
-      this.loadComponents();
-      
-      // Initialize auth session
-      await this.initializeAuth();
-      
-      // Legacy compatibility
-      this.initLegacyCompatibility();
-      
-      console.log('Application initialized successfully');
-    } catch (error) {
-      console.error('Initialization error:', error);
-    }
-  }
-
-  loadComponents() {
-    // Check if components exist before defining
-    if (!customElements.get('app-header') && typeof Header !== 'undefined') {
       customElements.define('app-header', Header);
-    }
-    
-    if (!customElements.get('app-footer') && typeof Footer !== 'undefined') {
       customElements.define('app-footer', Footer);
+    } catch (err) {
+      console.warn('Component registration error:', err);
     }
   }
 
-  async initializeAuth() {
-    if (typeof this.authService.checkSession === 'function') {
-      await this.authService.checkSession();
-    } else {
-      console.warn('AuthService.checkSession() not implemented');
+  async initAuth() {
+    try {
+      if (this.authService.checkSession) {
+        await this.authService.checkSession();
+      }
+    } catch (err) {
+      console.error('Auth initialization failed:', err);
     }
   }
 
-  initLegacyCompatibility() {
-    if (typeof window.legacyMain === 'function') {
-      document.addEventListener('DOMContentLoaded', () => {
-        window.legacyMain({
-          cart: this.cartManager,
-          auth: this.authService
-        });
-      });
-    }
+  setupLegacySupport() {
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.legacyMain) {
+        try {
+          window.legacyMain({
+            cart: this.cartManager,
+            auth: this.authService
+          });
+        } catch (err) {
+          console.error('Legacy init failed:', err);
+        }
+      }
+    });
   }
 }
 
-// Error handling for module loading
+// Error Handling
 window.addEventListener('error', (event) => {
-  console.error('Module loading error:', event.error);
+  console.error('Global error:', event.error);
 });
 
-// Start application
-document.addEventListener('DOMContentLoaded', () => {
-  new TextilartApp();
-});
+// Startup
+new TextilartApp();
