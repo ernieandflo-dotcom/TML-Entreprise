@@ -6,11 +6,11 @@
   <title>Textilart | Catalogue Professionnel</title>
   
   <!-- CSS -->
-  <link rel="stylesheet" href="dist/css/style.css" /> <!-- Compiled SCSS -->
+  <link rel="stylesheet" href="/dist/css/style.css"> <!-- Compiled SCSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Preload critical components -->
-  <link rel="preload" href="components/header/header.html" as="fetch" crossorigin>
+  <link rel="modulepreload" href="components/header/header.js">
 </head>
 <body>
   <!-- Dynamic Header Injection -->
@@ -116,11 +116,9 @@
   <div data-component="footer"></div>
 
   <!-- Modern JS Entry Point -->
-  <script type="module" src="js/app.js"></script>
+  <script type="module" src="/js/app.js"></script>
   
   <!-- Fallback for non-module browsers -->
-  <script nomodule>
-    document.write('<script src="js/legacy-loader.js"><\/script>');
-  </script>
+  <script nomodule src="/js/legacy-loader.js"></script>
 </body>
 </html>
