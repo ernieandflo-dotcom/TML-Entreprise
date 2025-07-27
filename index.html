@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Textilart | Catalogue Professionnel</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="dist/css/style.css" /> <!-- Compiled SCSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Preload critical components -->
+  <link rel="preload" href="components/header/header.html" as="fetch" crossorigin>
+</head>
+<body>
+  <!-- Dynamic Header Injection -->
+  <app-header></app-header>
+
+  <div class="container">
+    <!-- Filter Sidebar (will later move to components/filters/) -->
+    <aside class="sidebar">
+      <div class="filter-header">
+        <h2><i class="fas fa-filter"></i> Filtres</h2>
+        <span id="productCount" class="count-badge">0 produits</span>
+      </div>
+      
+      <div class="filter-group">
+        <h3><i class="fas fa-tshirt"></i> Type de produit</h3>
+        <div class="filter-options">
+          <label class="filter-label">
+            <input type="checkbox" value="tshirt" data-filter="category">
+            <span class="checkmark"></span>
+            T-shirts
+          </label>
+          <label class="filter-label">
+            <input type="checkbox" value="hoodie" data-filter="category">
+            <span class="checkmark"></span>
+            Hoodies
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3><i class="fas fa-tags"></i> Modèles</h3>
+        <div class="filter-options">
+          <label class="filter-label">
+            <input type="checkbox" value="classic" data-filter="model">
+            <span class="checkmark"></span>
+            Classique
+          </label>
+          <label class="filter-label">
+            <input type="checkbox" value="premium" data-filter="model">
+            <span class="checkmark"></span>
+            Premium
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3><i class="fas fa-feather-alt"></i> Matériaux</h3>
+        <div class="filter-options">
+          <label class="filter-label">
+            <input type="checkbox" value="coton" data-filter="material">
+            <span class="checkmark"></span>
+            Coton
+          </label>
+          <label class="filter-label">
+            <input type="checkbox" value="polyester" data-filter="material">
+            <span class="checkmark"></span>
+            Polyester
+          </label>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Product Grid -->
+    <main class="product-grid" id="productGrid">
+      <div class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Chargement des produits...</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal (will later move to components/modals/) -->
+  <div id="selectionModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3 id="modalProductTitle"></h3>
+      <div class="selection-grid-container">
+        <table id="selectionTable">
+          <thead>
+            <tr>
+              <th>Couleurs</th>
+              <!-- Les tailles seront ajoutées dynamiquement -->
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rempli dynamiquement -->
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Total</td>
+              <!-- Les totaux par taille seront ajoutés dynamiquement -->
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <button id="confirmSelection" class="btn btn-primary">
+        <i class="fas fa-cart-plus"></i> Ajouter au panier
+      </button>
+    </div>
+  </div>
+
+  <!-- Dynamic Footer Injection -->
+  <div data-component="footer"></div>
+
+  <!-- Modern JS Entry Point -->
+  <script type="module" src="js/app.js"></script>
+  
+  <!-- Fallback for non-module browsers -->
+  <script nomodule>
+    document.write('<script src="js/legacy-loader.js"><\/script>');
+  </script>
+</body>
+</html>
