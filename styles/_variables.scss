@@ -1,0 +1,24 @@
+// Colors
+$color-primary: #2c3e50;
+$color-secondary: #3498db;
+$color-text: #333;
+$color-bg: #fff;
+
+// Typography
+$font-primary: 'Segoe UI', system-ui, sans-serif;
+$font-heading: 'Montserrat', $font-primary;
+
+// Spacing
+$spacing-unit: 1rem;
+$spacings: (
+  'sm': $spacing-unit * 0.5,
+  'md': $spacing-unit,
+  'lg': $spacing-unit * 2
+);
+
+// Breakpoints
+$breakpoints: (
+  'mobile': 768px,
+  'tablet': 1024px,
+  'desktop': 1200px
+);

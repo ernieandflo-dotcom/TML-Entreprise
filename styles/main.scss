@@ -1,0 +1,35 @@
+// Configuration
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Base
+@use 'base/reset';
+@use 'base/typography';
+
+// Layout
+@use 'layout/grid';
+@use 'layout/container';
+
+// Components
+@use 'components/header';
+@use 'components/footer';
+@use 'components/product-card';
+@use 'components/filters';
+@use 'components/modal';
+
+// Global Styles
+:root {
+  // CSS Custom Properties (for runtime changes)
+  --primary: #2c3e50;
+  --secondary: #3498db;
+  --text-light: #ecf0f1;
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-text;
+  background: $color-bg;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
