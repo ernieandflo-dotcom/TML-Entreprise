@@ -1,18 +1,19 @@
-// styles/main.scss
-
-// 1. Only keep variables you actually use
+@use 'sass:map';
 @use 'variables' as *;
-
-// 2. Only import components that exist
 @use 'components/header';
 @use 'components/product-card';
 
-// 3. Simplified global styles
 :root {
-  --primary: #2c3e50; // CSS variable (for runtime changes)
+  // Directly use variables from the loaded namespace
+  --primary: #{$color-primary};
+  --secondary: #{$color-secondary};
+  --text-light: #{$color-text-light};
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: $font-primary;
+  color: $color-text;
+  background-color: $color-bg;
   margin: 0;
+  line-height: map.get($line-heights, 'normal');
 }
