@@ -5,8 +5,8 @@
 @use 'base';
 
 // Layout
-@use 'layout/grid';
-@use 'layout/responsive';
+@use 'layouts/grid';
+@use 'layouts/responsive';
 
 // Components
 @use 'components/header';
