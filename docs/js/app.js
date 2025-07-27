@@ -5,8 +5,8 @@ import { CartManager } from './modules/cart/cartManager.js';
 import { AuthService } from '../auth/auth.js';
 
 // Web Components (relative to js/)
-import { Header } from '../components/header/header.js';
-import { Footer } from '../components/footer/footer.js';
+import '../components/header/header.js';
+import '../components/footer/footer.js';
 
 class TextilartApp {
   constructor() {
