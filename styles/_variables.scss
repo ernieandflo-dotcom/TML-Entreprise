@@ -32,5 +32,6 @@ $colors: (
 );
 
 // Then update existing variables to reference the map:
-$color-primary: map-get($colors, 'primary');
+@use 'sass:map';
+$color-primary: map.get($colors, 'primary');
 // (Do this for all colors)
