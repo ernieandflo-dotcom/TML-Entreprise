@@ -1,19 +1,16 @@
 @use 'sass:map';
 @use 'variables' as *;
+
+// Global resets and base
+@use 'base';
+
+// Layout
+@use 'layout/grid';
+@use 'layout/responsive';
+
+// Components
 @use 'components/header';
 @use 'components/product-card';
-
-:root {
-  // Directly use variables from the loaded namespace
-  --primary: #{$color-primary};
-  --secondary: #{$color-secondary};
-  --text-light: #{$color-text-light};
-}
-
-body {
-  font-family: $font-primary;
-  color: $color-text;
-  background-color: $color-bg;
-  margin: 0;
-  line-height: map.get($line-heights, 'normal');
-}
+@use 'components/footer';
+@use 'components/order-summary';
+// (add filters, modals, buttons, etc., when ready)
