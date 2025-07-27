@@ -1,7 +1,7 @@
 // js/app.js - Updated Version
 
 // Modules
-import { CartManager } from '/js/modules/cart/cartManager.js';
+import { CartManager } from './modules/cart/cartManager.js';
 import { AuthService } from '../auth/auth.js'; // Updated path to use existing auth.js
 
 // Components
