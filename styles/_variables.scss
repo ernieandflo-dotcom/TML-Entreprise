@@ -22,3 +22,15 @@ $breakpoints: (
   'tablet': 1024px,
   'desktop': 1200px
 );
+
+// Color palette (add this above your current colors)
+$colors: (
+  'primary': #2c3e50,
+  'secondary': #3498db,
+  'text': #333,
+  'bg': #fff
+);
+
+// Then update existing variables to reference the map:
+$color-primary: map-get($colors, 'primary');
+// (Do this for all colors)
