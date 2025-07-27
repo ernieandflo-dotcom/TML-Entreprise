@@ -1,0 +1,66 @@
+/* _filters.scss */
+
+/* Filters container */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e0e0e0;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    flex: 1;
+
+    label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    select,
+    input[type="checkbox"],
+    input[type="radio"] {
+      font-size: 0.9rem;
+      padding: 0.4rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    select {
+      width: 100%;
+      max-width: 200px;
+    }
+
+    .filter-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+
+      label {
+        font-weight: normal;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+  }
+
+  &__button {
+    align-self: flex-end;
+    padding: 0.5rem 1rem;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background: #555;
+    }
+  }
+}

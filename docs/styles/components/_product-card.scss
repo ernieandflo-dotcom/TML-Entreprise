@@ -1,0 +1,78 @@
+// =======================
+// COMPONENT: PRODUCT CARD
+// =======================
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background-color: #f9f9f9;
+  }
+
+  &__info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.4;
+  }
+
+  &__description {
+    font-size: 0.875rem;
+    color: #666;
+    flex-grow: 1;
+  }
+
+  &__price {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111;
+  }
+
+  &__actions {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+
+    button {
+      flex: 1;
+      background-color: #222;
+      color: #fff;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #444;
+      }
+    }
+  }
+}

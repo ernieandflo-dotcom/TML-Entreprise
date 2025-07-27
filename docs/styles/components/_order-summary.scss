@@ -1,0 +1,56 @@
+// _order-summary.scss
+
+.order-summary {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  font-size: 0.95rem;
+  color: #333;
+
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .summary-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #e0e0e0;
+
+    &.total {
+      font-weight: 700;
+      border-top: 2px solid #ccc;
+      border-bottom: none;
+      margin-top: 0.8rem;
+      padding-top: 0.8rem;
+    }
+
+    span:first-child {
+      color: #666;
+    }
+
+    span:last-child {
+      font-weight: 500;
+    }
+  }
+
+  .checkout-button {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    border-radius: 0.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #444;
+    }
+  }
+}
