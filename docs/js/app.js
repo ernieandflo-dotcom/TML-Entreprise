@@ -71,3 +71,4 @@ window.addEventListener('error', (event) => {
 
 // Start the application
 new TextilartApp();
+
