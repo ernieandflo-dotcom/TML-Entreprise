@@ -75,6 +75,7 @@ class Header extends HTMLElement {
   }
 }
 
+
 // Register the custom element
 if (!customElements.get('app-header')) {
   customElements.define('app-header', Header);
