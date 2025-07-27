@@ -1,66 +1,71 @@
-// js/app.js - Production Ready Version
+// js/app.js - GitHub Pages Optimized Version
 
-// Core Modules
-import { CartManager } from '/js/modules/cart/cartManager.js';
-import { AuthService } from '/auth/auth.js';
+// Core Modules (using absolute paths for GitHub Pages)
+import { CartManager } from '/TML-Entreprise/js/modules/cart/cartManager.js';
+import { AuthService } from '/TML-Entreprise/auth/auth.js';
 
-// Web Components
-import { Header } from '/components/header/header.js';
-import { Footer } from '/components/footer/footer.js';
+// Web Components (absolute paths with repo name)
+import { Header } from '/TML-Entreprise/components/header/header.js';
+import { Footer } from '/TML-Entreprise/components/footer/footer.js';
 
 class TextilartApp {
   constructor() {
+    // Initialize services
     this.cartManager = new CartManager();
     this.authService = new AuthService();
-    this.init().catch(console.error);
+    
+    // Start app
+    this.init().catch(error => {
+      console.error('App initialization failed:', error);
+    });
   }
 
   async init() {
+    // Register components first
     this.registerComponents();
+    
+    // Then initialize other features
     await this.initAuth();
     this.setupLegacySupport();
-    console.debug('App initialized');
+    
+    console.log('Application initialized successfully');
   }
 
   registerComponents() {
-    try {
-      customElements.define('app-header', Header);
-      customElements.define('app-footer', Footer);
-    } catch (err) {
-      console.warn('Component registration error:', err);
-    }
+    // Components now self-register (defined in their own files)
+    console.debug('Components registered automatically');
   }
 
   async initAuth() {
     try {
-      if (this.authService.checkSession) {
+      if (typeof this.authService.checkSession === 'function') {
         await this.authService.checkSession();
       }
-    } catch (err) {
-      console.error('Auth initialization failed:', err);
+    } catch (error) {
+      console.warn('Auth session check failed:', error);
     }
   }
 
   setupLegacySupport() {
     window.addEventListener('DOMContentLoaded', () => {
-      if (window.legacyMain) {
+      if (typeof window.legacyMain === 'function') {
         try {
           window.legacyMain({
             cart: this.cartManager,
             auth: this.authService
           });
-        } catch (err) {
-          console.error('Legacy init failed:', err);
+        } catch (error) {
+          console.error('Legacy init failed:', error);
         }
       }
     });
   }
 }
 
-// Error Handling
+// Global error handling
 window.addEventListener('error', (event) => {
-  console.error('Global error:', event.error);
+  console.error('Uncaught error:', event.error);
 });
 
-// Startup
+// Start the application
 new TextilartApp();
