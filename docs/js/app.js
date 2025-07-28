@@ -1,132 +1,64 @@
-// js/app.js - GitHub Pages-compatible version using relative paths
+// docs/js/app.js
 
-// Core Modules (relative paths from js/)
 import { CartManager } from './modules/cart/cartManager.js';
-import { AuthService } from '../auth/auth.js';
 
-// Web Components (relative to js/)
-import '../components/header/header.js';
-import '../components/footer/footer.js';
+// Sélectionne les produits à afficher (placeholder d’exemple avec emojis)
+const sampleProducts = [
+  { id: 1, name: 'T-shirt', price: 25, emoji: '👕' },
+  { id: 2, name: 'Pantalon', price: 45, emoji: '👖' },
+  { id: 3, name: 'Haut', price: 35, emoji: '👚' },
+  { id: 4, name: 'Manteau', price: 90, emoji: '🧥' }
+];
 
-class TextilartApp {
-  constructor() {
-    // Initialize services
-    this.cartManager = new CartManager();
-    this.authService = new AuthService();
+// Rendu HTML d’un seul produit
+function renderProduct(product) {
+  const container = document.createElement('div');
+  container.className = 'product';
 
-    // Start app
-    this.init().catch(error => {
-      console.error('App initialization failed:', error);
-    });
-  }
+  container.innerHTML = `
+    <div class="product-emoji" style="font-size: 3rem">${product.emoji}</div>
+    <h3 class="product-name">${product.name}</h3>
+    <p class="product-price">${product.price} $</p>
+    <button class="add-to-cart" data-id="${product.id}">Ajouter au panier</button>
+  `;
 
-  async init() {
-    // Register custom elements (defined in imported modules)
-    this.registerComponents();
+  return container;
+}
 
-    // Initialize authentication logic (e.g. session check)
-    await this.initAuth();
-
-    // Optional legacy support
-    this.setupLegacySupport();
-
-    // Page-specific logic
-    this.initPageFeatures();
-
-    console.log('✅ Application initialized');
-  }
-
-  registerComponents() {
-    // Custom elements are self-registered inside their own modules
-    console.debug('🧩 Components registered (via module side effects)');
-  }
-
-  async initAuth() {
-    try {
-      if (typeof this.authService.checkSession === 'function') {
-        await this.authService.checkSession();
-      }
-    } catch (error) {
-      console.warn('⚠️ Auth session check failed:', error);
-    }
-  }
-
-  setupLegacySupport() {
-    window.addEventListener('DOMContentLoaded', () => {
-      if (typeof window.legacyMain === 'function') {
-        try {
-          window.legacyMain({
-            cart: this.cartManager,
-            auth: this.authService,
-          });
-        } catch (error) {
-          console.error('Legacy init failed:', error);
-        }
-      }
-    });
-  }
-
-  initPageFeatures() {
-    document.addEventListener('DOMContentLoaded', () => {
-      const panierContainer = document.querySelector('[data-cart-items]');
-      const totalContainer = document.querySelector('[data-cart-total]');
-      const viderBtn = document.querySelector('[data-cart-clear]');
-
-      if (panierContainer) {
-        this.renderCartItems(panierContainer, totalContainer);
-
-        if (viderBtn) {
-          viderBtn.addEventListener('click', () => {
-            this.cartManager.clearCart();
-            this.renderCartItems(panierContainer, totalContainer);
-          });
-        }
-      }
-    });
-  }
-
-  renderCartItems(container, totalContainer) {
-    const items = this.cartManager.getItems();
-    container.innerHTML = '';
-
-    if (items.length === 0) {
-      container.innerHTML = '<p>Votre panier est vide.</p>';
-      if (totalContainer) {
-        totalContainer.textContent = '0,00 $';
-      }
-      return;
-    }
-
-    let total = 0;
-
-    items.forEach(item => {
-      const itemTotal = item.price * item.quantity;
-      total += itemTotal;
-
-      const itemEl = document.createElement('div');
-      itemEl.classList.add('cart-item');
-      itemEl.innerHTML = `
-        <div class="cart-item__info">
-          <strong>${item.name}</strong><br>
-          ${item.price.toFixed(2)} $ × ${item.quantity}
-        </div>
-        <div class="cart-item__total">
-          ${(itemTotal).toFixed(2)} $
-        </div>
-      `;
-      container.appendChild(itemEl);
-    });
-
-    if (totalContainer) {
-      totalContainer.textContent = `${total.toFixed(2)} $`;
-    }
+// Met à jour le compteur d’articles dans le panier
+function updateCartCount() {
+  const count = CartManager.getTotalQuantity();
+  const countEl = document.querySelector('#cart-count');
+  if (countEl) {
+    countEl.textContent = count;
   }
 }
 
-// Global error handling
-window.addEventListener('error', (event) => {
-  console.error('Uncaught error:', event.error);
-});
+// Initialisation de la page produits
+function initProductPage() {
+  const container = document.querySelector('#product-list');
+  if (!container) return;
 
-// Start the application
-new TextilartApp();
+  container.innerHTML = '';
+  sampleProducts.forEach(product => {
+    const productEl = renderProduct(product);
+    container.appendChild(productEl);
+  });
+
+  container.addEventListener('click', (e) => {
+    if (e.target.classList.contains('add-to-cart')) {
+      const productId = parseInt(e.target.dataset.id, 10);
+      const product = sampleProducts.find(p => p.id === productId);
+      if (product) {
+        CartManager.addProduct(product);
+        updateCartCount();
+      }
+    }
+  });
+}
+
+// Initialisation de l'application (selon la page)
+document.addEventListener('DOMContentLoaded', () => {
+  initProductPage();
+  updateCartCount();
+});
