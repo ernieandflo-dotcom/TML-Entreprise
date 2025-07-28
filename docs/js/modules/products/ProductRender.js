@@ -2,7 +2,7 @@
 
 import { CartManager } from "../cart/cartManager.js";
 
-const cart = new CartManager();
+const cart = CartManager;
 
 // Mappage emojis par catégorie ou modèle
 const emojiMap = {
@@ -49,7 +49,7 @@ function createProductElement(product) {
   `;
 
   wrapper.querySelector(".add-to-cart").addEventListener("click", () => {
-    cart.addItem(product);
+    cart.addProduct(product);
     wrapper.querySelector(".add-to-cart").textContent = "Ajouté ✅";
     setTimeout(() => {
       wrapper.querySelector(".add-to-cart").textContent = "Ajouter au panier";
