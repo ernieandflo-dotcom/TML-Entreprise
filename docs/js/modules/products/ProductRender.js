@@ -14,7 +14,7 @@ const emojiMap = {
 
 export async function renderProducts(containerSelector = "#product-list") {
   try {
-    const response = await fetch("/data/produits.json");
+    const response = await fetch("./data/produits.json");
     const products = await response.json();
 
     const container = document.querySelector(containerSelector);
