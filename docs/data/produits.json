@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "T-shirt Classique",
+    "category": "tshirt",
+    "model": "classic",
+    "material": "coton",
+    "price": 19.99,
+    "colors": ["blanc", "noir", "bleu"],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "id": 2,
+    "name": "Hoodie Premium",
+    "category": "hoodie",
+    "model": "premium",
+    "material": "polyester",
+    "price": 49.99,
+    "colors": ["noir", "gris", "bleu marine"],
+    "sizes": ["M", "L", "XL", "XXL"]
+  },
+  {
+    "id": 3,
+    "name": "T-shirt Sport",
+    "category": "tshirt",
+    "model": "premium",
+    "material": "polyester",
+    "price": 24.99,
+    "colors": ["noir", "rouge", "vert"],
+    "sizes": ["S", "M", "L"]
+  },
+  {
+    "id": 4,
+    "name": "Hoodie Light",
+    "category": "hoodie",
+    "model": "classic",
+    "material": "coton",
+    "price": 39.99,
+    "colors": ["blanc", "gris clair"],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "id": 5,
+    "name": "Hoodie Premium",
+    "category": "hoodie",
+    "model": "premium",
+    "material": "polyester",
+    "price": 49.99,
+    "colors": ["noir", "gris", "bleu marine"],
+    "sizes": ["M", "L", "XL", "XXL"]
+  },
+  {
+    "id": 6,
+    "name": "T-shirt Sport",
+    "category": "tshirt",
+    "model": "premium",
+    "material": "polyester",
+    "price": 24.99,
+    "colors": ["noir", "rouge", "vert"],
+    "sizes": ["S", "M", "L"]
+  },
+  {
+    "id": 7,
+    "name": "Hoodie Light",
+    "category": "hoodie",
+    "model": "classic",
+    "material": "coton",
+    "price": 39.99,
+    "colors": ["blanc", "gris clair"],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "id": 8,
+    "name": "Hoodie Premium",
+    "category": "hoodie",
+    "model": "premium",
+    "material": "polyester",
+    "price": 49.99,
+    "colors": ["noir", "gris", "bleu marine"],
+    "sizes": ["M", "L", "XL", "XXL"]
+  },
+  {
+    "id": 9,
+    "name": "T-shirt Sport",
+    "category": "tshirt",
+    "model": "premium",
+    "material": "polyester",
+    "price": 24.99,
+    "colors": ["noir", "rouge", "vert"],
+    "sizes": ["S", "M", "L"]
+  },
+  {
+    "id": 10,
+    "name": "Hoodie Light",
+    "category": "hoodie",
+    "model": "classic",
+    "material": "coton",
+    "price": 39.99,
+    "colors": ["blanc", "gris clair"],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "id": 11,
+    "name": "Hoodie Premium",
+    "category": "hoodie",
+    "model": "premium",
+    "material": "polyester",
+    "price": 49.99,
+    "colors": ["noir", "gris", "bleu marine"],
+    "sizes": ["M", "L", "XL", "XXL"]
+  },
+  {
+    "id": 12,
+    "name": "T-shirt Sport",
+    "category": "tshirt",
+    "model": "premium",
+    "material": "polyester",
+    "price": 24.99,
+    "colors": ["noir", "rouge", "vert"],
+    "sizes": ["S", "M", "L"]
+  }
+]
