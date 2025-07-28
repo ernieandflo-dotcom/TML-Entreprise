@@ -1,0 +1,23 @@
+{
+  "client_id": "CLIENT-0423-XZ1",
+  "commande_id": "20250728-00AA",
+  "produits": [
+    {
+      "sku": "TSH001-NOIR-M",
+      "nom": "T-shirt Sport",
+      "quantité": 12
+    },
+    {
+      "sku": "HOOD002-GRIS-XL",
+      "nom": "Hoodie Premium",
+      "quantité": 6
+    },
+    {
+      "sku": "TSH001-ROUGE-L",
+      "nom": "T-shirt Sport",
+      "quantité": 10
+    }
+  ],
+  "date": "2025-07-28",
+  "total_estimé": "879.58"
+}
