@@ -1,5 +1,7 @@
 // docs/js/app.js
 
+import '../components/header/header.js';
+import '../components/footer/footer.js';
 import { CartManager } from './modules/cart/cartManager.js';
 
 // Sélectionne les produits à afficher (placeholder d’exemple avec emojis)
