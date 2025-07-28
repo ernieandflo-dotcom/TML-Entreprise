@@ -1,122 +1,134 @@
 [
   {
-    "id": 1,
+    "id": "ts-001",
     "name": "T-shirt Classique",
     "category": "tshirt",
     "model": "classic",
     "material": "coton",
     "price": 19.99,
     "colors": ["blanc", "noir", "bleu"],
-    "sizes": ["S", "M", "L", "XL"]
+    "sizes": ["S", "M", "L", "XL"],
+    "emoji": "👕"
   },
   {
-    "id": 2,
-    "name": "Hoodie Premium",
-    "category": "hoodie",
-    "model": "premium",
-    "material": "polyester",
-    "price": 49.99,
-    "colors": ["noir", "gris", "bleu marine"],
-    "sizes": ["M", "L", "XL", "XXL"]
+    "id": "ts-002",
+    "name": "T-shirt Bio",
+    "category": "tshirt",
+    "model": "eco",
+    "material": "coton bio",
+    "price": 22.50,
+    "colors": ["écru", "kaki", "gris clair"],
+    "sizes": ["S", "M", "L"],
+    "emoji": "👚"
   },
   {
-    "id": 3,
+    "id": "ts-003",
     "name": "T-shirt Sport",
     "category": "tshirt",
-    "model": "premium",
+    "model": "sport",
     "material": "polyester",
     "price": 24.99,
     "colors": ["noir", "rouge", "vert"],
-    "sizes": ["S", "M", "L"]
+    "sizes": ["M", "L", "XL"],
+    "emoji": "🏃"
   },
   {
-    "id": 4,
+    "id": "ts-004",
+    "name": "T-shirt Oversize",
+    "category": "tshirt",
+    "model": "oversize",
+    "material": "coton épais",
+    "price": 29.99,
+    "colors": ["noir", "beige", "rose pâle"],
+    "sizes": ["M", "L", "XL", "XXL"],
+    "emoji": "🧶"
+  },
+  {
+    "id": "hd-001",
+    "name": "Hoodie Premium",
+    "category": "hoodie",
+    "model": "premium",
+    "material": "coton/polyester",
+    "price": 49.99,
+    "colors": ["noir", "gris", "bleu marine"],
+    "sizes": ["M", "L", "XL", "XXL"],
+    "emoji": "🧥"
+  },
+  {
+    "id": "hd-002",
     "name": "Hoodie Light",
     "category": "hoodie",
-    "model": "classic",
-    "material": "coton",
+    "model": "light",
+    "material": "coton léger",
     "price": 39.99,
     "colors": ["blanc", "gris clair"],
-    "sizes": ["S", "M", "L", "XL"]
+    "sizes": ["S", "M", "L", "XL"],
+    "emoji": "🧢"
   },
   {
-    "id": 5,
-    "name": "Hoodie Premium",
+    "id": "hd-003",
+    "name": "Hoodie Sport",
     "category": "hoodie",
-    "model": "premium",
-    "material": "polyester",
-    "price": 49.99,
-    "colors": ["noir", "gris", "bleu marine"],
-    "sizes": ["M", "L", "XL", "XXL"]
+    "model": "sport",
+    "material": "polyester technique",
+    "price": 44.99,
+    "colors": ["bleu", "rouge", "gris"],
+    "sizes": ["S", "M", "L"],
+    "emoji": "🎽"
   },
   {
-    "id": 6,
-    "name": "T-shirt Sport",
-    "category": "tshirt",
-    "model": "premium",
-    "material": "polyester",
-    "price": 24.99,
-    "colors": ["noir", "rouge", "vert"],
-    "sizes": ["S", "M", "L"]
-  },
-  {
-    "id": 7,
-    "name": "Hoodie Light",
+    "id": "hd-004",
+    "name": "Hoodie Zippé",
     "category": "hoodie",
+    "model": "zip",
+    "material": "coton/polyester",
+    "price": 52.00,
+    "colors": ["noir", "olive", "moutarde"],
+    "sizes": ["M", "L", "XL"],
+    "emoji": "🧵"
+  },
+  {
+    "id": "lg-001",
+    "name": "Legging Confort",
+    "category": "legging",
     "model": "classic",
-    "material": "coton",
-    "price": 39.99,
-    "colors": ["blanc", "gris clair"],
-    "sizes": ["S", "M", "L", "XL"]
+    "material": "élasthanne",
+    "price": 34.99,
+    "colors": ["noir", "rose", "lavande"],
+    "sizes": ["XS", "S", "M", "L"],
+    "emoji": "🩳"
   },
   {
-    "id": 8,
-    "name": "Hoodie Premium",
-    "category": "hoodie",
-    "model": "premium",
-    "material": "polyester",
-    "price": 49.99,
-    "colors": ["noir", "gris", "bleu marine"],
-    "sizes": ["M", "L", "XL", "XXL"]
+    "id": "lg-002",
+    "name": "Legging Sport",
+    "category": "legging",
+    "model": "sport",
+    "material": "polyamide",
+    "price": 38.50,
+    "colors": ["gris", "turquoise", "noir"],
+    "sizes": ["S", "M", "L"],
+    "emoji": "🥋"
   },
   {
-    "id": 9,
-    "name": "T-shirt Sport",
-    "category": "tshirt",
-    "model": "premium",
-    "material": "polyester",
-    "price": 24.99,
-    "colors": ["noir", "rouge", "vert"],
-    "sizes": ["S", "M", "L"]
+    "id": "lg-003",
+    "name": "Jogging Mixte",
+    "category": "jogging",
+    "model": "urban",
+    "material": "coton bio",
+    "price": 42.00,
+    "colors": ["noir", "sable", "gris anthracite"],
+    "sizes": ["M", "L", "XL"],
+    "emoji": "👖"
   },
   {
-    "id": 10,
-    "name": "Hoodie Light",
-    "category": "hoodie",
-    "model": "classic",
-    "material": "coton",
-    "price": 39.99,
-    "colors": ["blanc", "gris clair"],
-    "sizes": ["S", "M", "L", "XL"]
-  },
-  {
-    "id": 11,
-    "name": "Hoodie Premium",
-    "category": "hoodie",
-    "model": "premium",
-    "material": "polyester",
-    "price": 49.99,
-    "colors": ["noir", "gris", "bleu marine"],
-    "sizes": ["M", "L", "XL", "XXL"]
-  },
-  {
-    "id": 12,
-    "name": "T-shirt Sport",
-    "category": "tshirt",
-    "model": "premium",
-    "material": "polyester",
-    "price": 24.99,
-    "colors": ["noir", "rouge", "vert"],
-    "sizes": ["S", "M", "L"]
+    "id": "lg-004",
+    "name": "Pantalon Relax",
+    "category": "pantalon",
+    "model": "relax",
+    "material": "lin / coton",
+    "price": 45.00,
+    "colors": ["beige", "bleu ciel", "blanc"],
+    "sizes": ["S", "M", "L", "XL"],
+    "emoji": "🩲"
   }
 ]
