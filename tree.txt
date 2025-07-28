@@ -1,0 +1,59 @@
+File structure actuel de l'application Entreprise : 
+===txt===
+docs/
+- docs/index.html                
+- docs/panier.html
+- docs/assets/
+- - docs/assets/logos/
+- - - docs/assets/logos/logo_textilart-simple-carre.png
+- docs/auth/
+- - docs/auth/auth.js
+- - docs/auth/login.html
+- docs/components/
+- - docs/components/footer/
+- - - docs/components/footer/footer.html
+- - - docs/components/footer/footer.js
+- - docs/components/header/
+- - - docs/components/header/header.html
+- - - docs/components/header/header.js
+- docs/data/
+- - docs/data/produits.json
+- docs/dist/
+- - docs/dist/css/
+- - - docs/dist/css/style.css
+- - - docs/dist/css/variables.css
+- docs/export/
+- - docs/export/commande_TML.json
+- docs/js/
+- - docs/js/modules/
+- - - docs/js/modules/cart/
+- - - - docs/js/modules/cart/cartHelpers.js
+- - - - docs/js/modules/cart/cartManager.js
+- - - docs/js/modules/filters/
+- - - - docs/js/modules/filters/FilterBuilder.js
+- - - - docs/js/modules/filters/FilterManager.js
+- - - docs/js/modules/products/
+- - - - docs/js/modules/products/ProductRender.js
+- - - - docs/js/modules/products/ProductService.js
+- - docs/js/services/
+- - - docs/js/services/ApiService.js
+- - - docs/js/services/ExportService.js
+- - docs/js/app.js
+- docs/styles/
+- - docs/styles/layouts/
+- - - docs/styles/layouts/_grid.scss
+- - - docs/styles/layouts/_responsive.scss
+- - docs/styles/components/
+- - - docs/styles/components/_filters.scss
+- - - docs/styles/components/_footer.scss
+- - - docs/styles/components/_header.scss
+- - - docs/styles/components/_order-summary.scss
+- - - docs/styles/components/_product-card.scss
+- - docs/styles/main.scss 
+- - docs/styles/_base.scss
+- - docs/styles/_variable.scss
+- docs/index.html
+- docs/panier.html
+- docs/package.json
+- docs/context.txt
+===txt===
