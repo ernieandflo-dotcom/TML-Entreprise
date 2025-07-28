@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Textilart</title>
+  <title>Textilart | Catalogue</title>
 
   <link rel="icon" type="image/png" href="/TML-Entreprise/assets/logos/logo_textilart-simple-carre.png" />
   <link rel="stylesheet" href="/TML-Entreprise/dist/css/style.css">
@@ -18,13 +17,102 @@
   <!-- Fallback for older browsers -->
   <script nomodule src="/TML-Entreprise/js/legacy-loader.js"></script>
 </head>
-
 <body>
-  <header id="header"></header>
+  <!-- Dynamic Header Injection -->
+  <app-header></app-header>
 
-  <main class="container mt-4">
-    <section id="products" class="row"></section>
-  </main>
+  <div class="container">
+    <!-- Filter Sidebar -->
+    <aside class="sidebar">
+      <div class="filter-header">
+        <h2><i class="fas fa-filter"></i> Filtres</h2>
+        <span id="productCount" class="count-badge">0 produits</span>
+      </div>
+
+      <div class="filter-group">
+        <h3><i class="fas fa-tshirt"></i> Type de produit</h3>
+        <div class="filter-options">
+          <label class="filter-label">
+            <input type="checkbox" value="tshirt" data-filter="category">
+            <span class="checkmark"></span>
+            T-shirts
+          </label>
+          <label class="filter-label">
+            <input type="checkbox" value="hoodie" data-filter="category">
+            <span class="checkmark"></span>
+            Hoodies
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3><i class="fas fa-tags"></i> Modèles</h3>
+        <div class="filter-options">
+          <label class="filter-label">
+            <input type="checkbox" value="classic" data-filter="model">
+            <span class="checkmark"></span>
+            Classique
+          </label>
+          <label class="filter-label">
+            <input type="checkbox" value="premium" data-filter="model">
+            <span class="checkmark"></span>
+            Premium
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3><i class="fas fa-feather-alt"></i> Matériaux</h3>
+        <div class="filter-options">
+          <label class="filter-label">
+            <input type="checkbox" value="coton" data-filter="material">
+            <span class="checkmark"></span>
+            Coton
+          </label>
+          <label class="filter-label">
+            <input type="checkbox" value="polyester" data-filter="material">
+            <span class="checkmark"></span>
+            Polyester
+          </label>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Product Grid -->
+    <main class="container mt-4">
+      <section id="products" class="row"></section>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div id="selectionModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3 id="modalProductTitle"></h3>
+      <div class="selection-grid-container">
+        <table id="selectionTable">
+          <thead>
+            <tr>
+              <th>Couleurs</th>
+              <!-- Tailles dynamiques -->
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Remplissage dynamique -->
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Total</td>
+              <!-- Totaux dynamiques -->
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <button id="confirmSelection" class="btn btn-primary">
+        <i class="fas fa-cart-plus"></i> Ajouter au panier
+      </button>
+    </div>
+  </div>
 
   <footer id="footer"></footer>
 
