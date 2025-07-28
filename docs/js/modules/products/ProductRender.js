@@ -1,15 +1,31 @@
 // docs/js/modules/products/ProductRender.js
 
-// Fonction principale de rendu
+import { CartManager } from "../cart/cartManager.js";
+
+const cart = new CartManager();
+
+// Mappage emojis par catégorie ou modèle
+const emojiMap = {
+  tshirt: "👕",
+  hoodie: "🧥",
+  classic: "🧵",
+  premium: "💎"
+};
+
 export async function renderProducts(containerSelector = "#product-list") {
   try {
-    const response = await fetch('/data/produits.json');
+    const response = await fetch("/data/produits.json");
     const products = await response.json();
 
     const container = document.querySelector(containerSelector);
+    if (!container) {
+      console.error("Container introuvable :", containerSelector);
+      return;
+    }
+
     container.innerHTML = ""; // Nettoie l'ancien contenu
 
-    products.forEach(product => {
+    products.forEach((product) => {
       const productEl = createProductElement(product);
       container.appendChild(productEl);
     });
@@ -19,27 +35,26 @@ export async function renderProducts(containerSelector = "#product-list") {
   }
 }
 
-// Génère un bloc HTML pour un produit
 function createProductElement(product) {
   const wrapper = document.createElement("div");
-  wrapper.className = "product";
+  wrapper.className = "product-card";
+
+  const emoji = emojiMap[product.category] || emojiMap[product.model] || "🛍️";
 
   wrapper.innerHTML = `
-    <h3>${product.nom}</h3>
-    <p>${product.description}</p>
-    <p><strong>Prix:</strong> ${product.prix} ${product.devise || "$"}</p>
-    <button data-id="${product.id}" class="add-to-cart">Ajouter au panier</button>
+    <div class="product-image">${emoji}</div>
+    <h3 class="product-name">${product.name}</h3>
+    <p class="product-price">${product.price.toFixed(2)} $</p>
+    <button class="add-to-cart" data-id="${product.id}">Ajouter au panier</button>
   `;
 
-  wrapper.querySelector("button.add-to-cart").addEventListener("click", () => {
-    addToCart(product);
+  wrapper.querySelector(".add-to-cart").addEventListener("click", () => {
+    cart.addItem(product);
+    wrapper.querySelector(".add-to-cart").textContent = "Ajouté ✅";
+    setTimeout(() => {
+      wrapper.querySelector(".add-to-cart").textContent = "Ajouter au panier";
+    }, 1000);
   });
 
   return wrapper;
-}
-
-// Fonction basique d'ajout au panier (sera remplacée par cartManager plus tard)
-function addToCart(product) {
-  alert(`Produit ajouté : ${product.nom}`);
-  // ➜ Intégration avec cartManager.js viendra ici plus tard
 }
