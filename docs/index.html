@@ -24,65 +24,67 @@
   <app-header></app-header>
 
   <div class="container">
-    <!-- Filter Sidebar -->
-    <aside class="sidebar">
-      <div class="filter-header">
-        <h2><i class="fas fa-filter"></i> Filtres</h2>
-        <span id="productCount" class="count-badge">0 produits</span>
-      </div>
-
-      <div class="filter-group">
-        <h3><i class="fas fa-tshirt"></i> Type de produit</h3>
-        <div class="filter-options">
-          <label class="filter-label">
-            <input type="checkbox" value="tshirt" data-filter="category">
-            <span class="checkmark"></span>
-            T-shirts
-          </label>
-          <label class="filter-label">
-            <input type="checkbox" value="hoodie" data-filter="category">
-            <span class="checkmark"></span>
-            Hoodies
-          </label>
+    <main class="product-page">
+      <!-- Filter Sidebar -->
+      <aside class="sidebar filters-container">
+        <div class="filter-header">
+          <h2><i class="fas fa-filter"></i> Filtres</h2>
+          <span id="productCount" class="count-badge">0 produits</span>
         </div>
-      </div>
 
-      <div class="filter-group">
-        <h3><i class="fas fa-tags"></i> Modèles</h3>
-        <div class="filter-options">
-          <label class="filter-label">
-            <input type="checkbox" value="classic" data-filter="model">
-            <span class="checkmark"></span>
-            Classique
-          </label>
-          <label class="filter-label">
-            <input type="checkbox" value="premium" data-filter="model">
-            <span class="checkmark"></span>
-            Premium
-          </label>
+        <div class="filter-group">
+          <h3><i class="fas fa-tshirt"></i> Type de produit</h3>
+          <div class="filter-options">
+            <label class="filter-label">
+              <input type="checkbox" value="tshirt" data-filter="category">
+              <span class="checkmark"></span>
+              T-shirts
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" value="hoodie" data-filter="category">
+              <span class="checkmark"></span>
+              Hoodies
+            </label>
+          </div>
         </div>
-      </div>
 
-      <div class="filter-group">
-        <h3><i class="fas fa-feather-alt"></i> Matériaux</h3>
-        <div class="filter-options">
-          <label class="filter-label">
-            <input type="checkbox" value="coton" data-filter="material">
-            <span class="checkmark"></span>
-            Coton
-          </label>
-          <label class="filter-label">
-            <input type="checkbox" value="polyester" data-filter="material">
-            <span class="checkmark"></span>
-            Polyester
-          </label>
+        <div class="filter-group">
+          <h3><i class="fas fa-tags"></i> Modèles</h3>
+          <div class="filter-options">
+            <label class="filter-label">
+              <input type="checkbox" value="classic" data-filter="model">
+              <span class="checkmark"></span>
+              Classique
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" value="premium" data-filter="model">
+              <span class="checkmark"></span>
+              Premium
+            </label>
+          </div>
         </div>
-      </div>
-    </aside>
 
-    <!-- Product Grid -->
-    <main class="container mt-4">
-      <section id="products" class="row"></section>
+        <div class="filter-group">
+          <h3><i class="fas fa-feather-alt"></i> Matériaux</h3>
+          <div class="filter-options">
+            <label class="filter-label">
+              <input type="checkbox" value="coton" data-filter="material">
+              <span class="checkmark"></span>
+              Coton
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" value="polyester" data-filter="material">
+              <span class="checkmark"></span>
+              Polyester
+            </label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Product Grid -->
+      <div class="container mt-4">
+        <section id="products" class="products-container row"></section>
+      </div>
     </main>
   </div>
 
